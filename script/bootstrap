@@ -2,15 +2,22 @@
 # -*- coding: utf8 -*-
 
 import os
-source = "https://raw.github.com/anjuke/bootstrap.py/v1.0/bootstrap.py"
-target = "%s/bootstrap.py" % os.path.dirname(os.path.abspath(__file__))
+source = 'https://raw.github.com/anjuke/bootstrap.py/v1.0/bootstrap.py'
+target = '%s/bootstrap.py' % os.path.dirname(os.path.abspath(__file__))
 if not os.path.isfile(target):
-    os.system("wget %s -O %s" % (source, target))
+    os.system('wget %s -O %s' % (source, target))
 
 
 from bootstrap import bootstrap, ve
-bootstrap(os.path.dirname(os.path.abspath(__file__)) + "/..")
+bootstrap(os.path.dirname(os.path.abspath(__file__)) + '/..')
 
-ve("python efp-core/setup.py develop")
-ve("python efp-job/setup.py develop")
-ve("python efp-web/setup.py develop")
+workdir = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + '/..')
+
+os.chdir(workdir + '/efp-core')
+ve('python setup.py develop')
+
+os.chdir(workdir + '/efp-job')
+ve('python setup.py develop')
+
+os.chdir(workdir + '/efp-web')
+ve('python setup.py develop')

@@ -5,14 +5,13 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-srcdir = os.path.dirname(__file__) + '/src'
 
 setup (
     name = 'efp-core',
     version = '1.0.dev',
 
-    package_dir = {'': srcdir},
-    packages = find_packages(srcdir),
+    package_dir = {'': 'src'},
+    packages = find_packages('src'),
 
     install_requires = [],
     setup_requires = [],

@@ -11,8 +11,8 @@ setup (
     name = 'efp-web',
     version = '1.0.dev',
 
-    package_dir = {'': srcdir},
-    packages = find_packages(srcdir),
+    package_dir = {'': 'src'},
+    packages = find_packages('src'),
 
     entry_points = {
         'console_scripts':
