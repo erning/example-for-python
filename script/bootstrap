@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 
 import os
-source = 'https://raw.github.com/anjuke/bootstrap.py/v1.0/bootstrap.py'
+source = 'https://raw.github.com/anjuke/bootstrap.py/v1.1/bootstrap.py'
 target = '%s/bootstrap.py' % os.path.dirname(os.path.abspath(__file__))
 if not os.path.isfile(target):
     os.system('wget %s -O %s' % (source, target))
