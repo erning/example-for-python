@@ -21,7 +21,7 @@ setup (
 
     install_requires = [
         'efp-core',
-        'Flask==0.9'
+        'Flask==0.10'
     ],
     setup_requires = [],
     tests_require = [],
